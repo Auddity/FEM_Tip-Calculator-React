@@ -1,5 +1,25 @@
+:root {
+  --StrongCyan: hsl(172, 67%, 45%);
+  --VeryDarkCyan: hsl(183, 100%, 15%);
+  --GrayishCyan: hsl(184, 14%, 56%);
+  --DarkGrayishCyan: hsl(186, 14%, 43%);
+  --LightGrayishCyan: hsl(185, 41%, 84%);
+  --VeryLightGrayishCyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--LightGrayishCyan);
+}
+

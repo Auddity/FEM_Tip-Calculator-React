@@ -1,18 +1,16 @@
 import React from 'react'
 
-function PercentButton({ percent, name }) {
+function PercentInput({ percent }) {
   return (
     <>
-      <button
+      <input
         type='radio'
         id={percent}
         value={percent}
         name='tipAmount'
-      >
-        PercentButtons
-      </button>
+      />
     </>
   )
 }
 
-export default PercentButton
+export default PercentInput
