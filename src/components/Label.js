@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Label({ percent }) {
+function Label(props) {
   return (
-    <label htmlFor={percent}>
-      {percent}
+    <label htmlFor={props.for}>
+      {props.for}
     </label>
   )
 }
