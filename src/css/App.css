@@ -2,3 +2,13 @@
   text-align: center;
 }
 
+main {
+  background-color: var(--White);
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+main .Display {
+  background-color: var(--VeryDarkCyan);
+  color: var(--White)
+}
