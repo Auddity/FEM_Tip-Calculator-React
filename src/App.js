@@ -1,17 +1,42 @@
+import { useReducer } from 'react';
 import './css/App.css';
-import logo from './images/logo.svg'
-import Form from './components/Form.js'
+import logo from './images/logo.svg';
+import Form from './components/Form.js';
 import Display from './components/Display';
 
+function reducer(state, { type, payload }) {
+  switch(type) {
+    // case :
+    //   return ;
+    // case : 
+    //   return ;
+    // case : 
+    //   return ;
+    // default:
+  }
+}
+
 function App() {
+  const [{ 
+    billTotal, people, selected
+  }, dispatch] = useReducer(reducer, {})
+
   return (
     <div className="App">
       <header>
         <img src={logo} alt="Splitter Logo" />
       </header>
       <main>
-        <Form />
-        <Display />
+        <Form 
+          billTotal={billTotal}
+          people={people} 
+          selected={selected}
+          dispatch={dispatch} 
+        />
+        <Display 
+          billTotal={billTotal}
+          people={people}
+        />
       </main>
     </div>
   );
