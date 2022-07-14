@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PercentInput({ percent }) {
+function PercentInput({ percent, percentSelected, dispatch }) {
   return (
     <>
       <input

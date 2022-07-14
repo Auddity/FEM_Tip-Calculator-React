@@ -18,7 +18,7 @@ function reducer(state, { type, payload }) {
 
 function App() {
   const [{ 
-    billTotal, people, selected
+    billTotal, people, percentSelected
   }, dispatch] = useReducer(reducer, {})
 
   return (
@@ -30,7 +30,7 @@ function App() {
         <Form 
           billTotal={billTotal}
           people={people} 
-          selected={selected}
+          percentSelected={percentSelected}
           dispatch={dispatch} 
         />
         <Display 

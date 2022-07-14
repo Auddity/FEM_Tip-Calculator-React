@@ -7,6 +7,8 @@ function Inputs(props) {
       // onChange={}
       name={props.name}
       id={props.name}
+      // props.bill or props.people
+      // ?? conditional in the onChange listener?
     />
   )
 }
