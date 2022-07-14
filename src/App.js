@@ -4,23 +4,32 @@ import logo from './images/logo.svg';
 import Form from './components/Form.js';
 import Display from './components/Display';
 
+export const ACTIONS = {
+  BILL: 'bill',
+  PEOPLE: 'people',
+  SELECTED: 'selected',
+  EVALUATE: 'evaluate'
+}
+
 function reducer(state, { type, payload }) {
+  console.log(payload);
   switch(type) {
-    // case :
-    //   return ;
+    case ACTIONS.BILL:
+      return { ...state, billTotal: payload};
+    case ACTIONS.PEOPLE: 
+      return { ...state, people: payload };
     // case : 
     //   return ;
-    // case : 
-    //   return ;
-    // default:
+    default:
   }
 }
 
 function App() {
   const [{ 
     billTotal, people, percentSelected
-  }, dispatch] = useReducer(reducer, {})
+  }, dispatch] = useReducer(reducer, { billTotal: '', people: ''})
 
+  console.log(billTotal, people)
   return (
     <div className="App">
       <header>

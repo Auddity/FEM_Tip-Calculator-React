@@ -3,6 +3,7 @@ import PercentInput from './PercentInput'
 import Inputs from './Inputs'
 import Label from './Label'
 import '../css/Form.css'
+import { ACTIONS } from '../App'
 
 function Form({ billTotal, people, percentSelected, dispatch}) {
   return (
@@ -12,6 +13,9 @@ function Form({ billTotal, people, percentSelected, dispatch}) {
         <Inputs 
           name='bill'
           billTotal={billTotal}
+          dispatch={dispatch}
+          value={billTotal}
+          action={ACTIONS.BILL}
         />
       </div>
       <fieldset>
@@ -53,6 +57,9 @@ function Form({ billTotal, people, percentSelected, dispatch}) {
         <Inputs 
           name='people'
           people={people}
+          dispatch={dispatch}
+          value={people}
+          action={ACTIONS.PEOPLE}
         />
       </div>
     </form>
