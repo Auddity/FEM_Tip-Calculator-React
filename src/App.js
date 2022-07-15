@@ -28,7 +28,7 @@ function App() {
     billTotal, people, tipAmount
   }, dispatch] = useReducer(reducer, { billTotal: '', people: '', tipAmount: '' })
 
-  console.log(tipAmount)
+  
   return (
     <div className="App">
       <header>
@@ -39,7 +39,7 @@ function App() {
           billTotal={billTotal}
           people={people} 
           tipAmount={tipAmount}
-          dispatch={dispatch} 
+          dispatch={dispatch}
         />
         <Display 
           billTotal={billTotal}
