@@ -28,6 +28,7 @@ function App() {
     billTotal, people, tipAmount
   }, dispatch] = useReducer(reducer, { billTotal: '', people: '', tipAmount: '' })
 
+  console.log(tipAmount)
   
   return (
     <div className="App">

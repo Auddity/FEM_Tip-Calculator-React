@@ -8,7 +8,7 @@ function PercentInput(props) {
         type='radio'
         id={props.value}
         value={props.value}
-        name={props.tipAmount}
+        name={props.value}
         checked={props.tipAmount === props.value}
         onChange={(e) => {props.dispatch({
           type: props.action,
