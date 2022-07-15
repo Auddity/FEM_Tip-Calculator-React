@@ -1,8 +1,6 @@
 import React from 'react'
 
 function Inputs(props) {
-  // console.log(props.value);
-
   return (
     <input
       type='number'
@@ -12,8 +10,6 @@ function Inputs(props) {
       name={props.name}
       id={props.name}
       value={props.value}
-      // props.bill or props.people
-      // ?? conditional in the onChange listener?
     />
   )
 }

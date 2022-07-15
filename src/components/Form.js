@@ -5,7 +5,7 @@ import Label from './Label'
 import '../css/Form.css'
 import { ACTIONS } from '../App'
 
-function Form({ billTotal, people, percentSelected, dispatch}) {
+function Form({ billTotal, people, tipAmount, dispatch}) {
   return (
     <form className="Form">
       <div className="formControl">
@@ -21,34 +21,42 @@ function Form({ billTotal, people, percentSelected, dispatch}) {
       <fieldset>
         <PercentInput 
           percent='5%' 
-          value='.5'/>
+          value='.5'
+          tipAmount={tipAmount}
+          dispatch={dispatch} 
+          action={ACTIONS.SELECTED} 
+        />
         <Label for='5%' text='5%'/>
         <PercentInput 
           percent='10%'
           value='.10'
-          percentSelected={percentSelected}
-          dispatch={dispatch}  
+          tipAmount={tipAmount}
+          dispatch={dispatch}
+          action={ACTIONS.SELECTED}   
         />
         <Label for='10%' text='10%' />
         <PercentInput 
           percent='15%'
           value='.15'
-          percentSelected={percentSelected}
-          dispatch={dispatch}  
+          tipAmount={tipAmount}
+          dispatch={dispatch}
+          action={ACTIONS.SELECTED}   
         />
         <Label for='15%' text='15%' />
         <PercentInput 
           percent='25%'
           value='.20'
-          percentSelected={percentSelected}
-          dispatch={dispatch}  
+          tipAmount={tipAmount}
+          dispatch={dispatch} 
+          action={ACTIONS.SELECTED}  
         />
         <Label for='25%' text='25%' />
         <PercentInput 
           percent='50%'
           value='.50'
-          percentSelected={percentSelected}
-          dispatch={dispatch}  
+          tipAmount={tipAmount}
+          dispatch={dispatch}
+          action={ACTIONS.SELECTED}   
         />
         <Label for='50%' text='50%' />
       </fieldset>

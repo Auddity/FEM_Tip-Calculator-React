@@ -12,24 +12,23 @@ export const ACTIONS = {
 }
 
 function reducer(state, { type, payload }) {
-  console.log(payload);
   switch(type) {
     case ACTIONS.BILL:
       return { ...state, billTotal: payload};
     case ACTIONS.PEOPLE: 
       return { ...state, people: payload };
-    // case : 
-    //   return ;
+    case ACTIONS.SELECTED: 
+      return { ...state, tipAmount: payload};
     default:
   }
 }
 
 function App() {
   const [{ 
-    billTotal, people, percentSelected
-  }, dispatch] = useReducer(reducer, { billTotal: '', people: ''})
+    billTotal, people, tipAmount
+  }, dispatch] = useReducer(reducer, { billTotal: '', people: '', tipAmount: '' })
 
-  console.log(billTotal, people)
+  console.log(tipAmount)
   return (
     <div className="App">
       <header>
@@ -39,7 +38,7 @@ function App() {
         <Form 
           billTotal={billTotal}
           people={people} 
-          percentSelected={percentSelected}
+          tipAmount={tipAmount}
           dispatch={dispatch} 
         />
         <Display 

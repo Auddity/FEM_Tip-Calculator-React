@@ -1,13 +1,18 @@
 import React from 'react'
 
-function PercentInput({ percent, percentSelected, dispatch }) {
+function PercentInput(props) {
   return (
     <>
       <input
         type='radio'
-        id={percent}
-        value={percent}
-        name='tipAmount'
+        id={props.percent}
+        value={props.percent}
+        name={props.tipAmount}
+        checked={props.tipAmount === props.percent}
+        onChange={() => props.dispatch({
+          type: props.action,
+          payload: props.value
+        })}
       />
     </>
   )
