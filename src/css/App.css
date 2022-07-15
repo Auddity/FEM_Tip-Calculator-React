@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+header {
+  margin-block: 4.5rem;
+}
+
 main {
   background-color: var(--White);
   border-top-left-radius: 1.5rem;

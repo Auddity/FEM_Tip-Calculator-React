@@ -10,11 +10,10 @@ function PercentInput(props) {
         value={props.value}
         name={props.value}
         checked={props.tipAmount === props.value}
-        onChange={(e) => {props.dispatch({
+        onChange={() => props.dispatch({
           type: props.action,
           payload: props.value
         })
-        console.log(e.target)}
       }
       />
     </>

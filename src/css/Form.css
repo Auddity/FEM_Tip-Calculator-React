@@ -1,8 +1,14 @@
+.Form {
+  padding-block: 2.5rem;
+  /* padding-inline: 2rem; */
+}
+
 /* Number Inputs */
 .Form .formControl {
-  width: 90%;
+  width: 85%;
   text-align: left;
   margin-inline: auto;
+  color: var(--DarkGrayishCyan);
 }
 
 .Form .formControl label,
@@ -12,9 +18,24 @@
 }
 
 .Form .formControl input[type="number"] {
+  font-size: 2rem;
+  font-family: inherit;
+  text-align: right;
+  background-color: var(--VeryLightGrayishCyan);
+  color: var(--VeryDarkCyan);
+  padding-block: .5rem;
+  padding-inline: 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  margin-block: .5rem 2rem;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   -appearance: textfield;
+}
+
+.Form .formControl input[type="number"]:focus {
+  border: 2px solid var(--StrongCyan);
+  outline: none;
 }
 
 .Form .formControl input[type="number"]::-webkit-inner-spin-button,

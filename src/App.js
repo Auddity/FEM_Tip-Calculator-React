@@ -27,8 +27,6 @@ function App() {
   const [{ 
     billTotal, people, tipAmount
   }, dispatch] = useReducer(reducer, { billTotal: '', people: '', tipAmount: '' })
-
-  console.log(tipAmount)
   
   return (
     <div className="App">
