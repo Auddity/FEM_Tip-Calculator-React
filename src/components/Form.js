@@ -18,27 +18,29 @@ function Form({ billTotal, people, tipAmount, dispatch}) {
           action={ACTIONS.BILL}
         />
       </div>
+
+      <p>Select Tip %</p>
       <fieldset>
         <PercentInput 
           value='.5'
           tipAmount={tipAmount}
           dispatch={dispatch} 
           action={ACTIONS.SELECTED} 
-        />
+          />
         <Label for='.5' text='5%'/>
         <PercentInput 
           value='.10'
           tipAmount={tipAmount}
           dispatch={dispatch}
           action={ACTIONS.SELECTED}   
-        />
+          />
         <Label for='.10' text='10%' />
         <PercentInput 
           value='.15'
           tipAmount={tipAmount}
           dispatch={dispatch}
           action={ACTIONS.SELECTED}   
-        />
+          />
         <Label for='.15' text='15%' />
         <PercentInput 
           percent='25%'
@@ -46,14 +48,14 @@ function Form({ billTotal, people, tipAmount, dispatch}) {
           tipAmount={tipAmount}
           dispatch={dispatch} 
           action={ACTIONS.SELECTED}  
-        />
+          />
         <Label for='.25' text='25%' />
         <PercentInput 
           value='.50'
           tipAmount={tipAmount}
           dispatch={dispatch}
           action={ACTIONS.SELECTED}   
-        />
+          />
         <Label for='.50' text='50%' />
       </fieldset>
       <div className="formControl">

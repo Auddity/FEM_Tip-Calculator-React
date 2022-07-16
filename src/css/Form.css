@@ -1,11 +1,17 @@
 .Form {
+  width: 85%;
   padding-block: 2.5rem;
-  /* padding-inline: 2rem; */
+  margin-inline: auto;
+}
+
+.Form p {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: var(--DarkGrayishCyan);
 }
 
 /* Number Inputs */
 .Form .formControl {
-  width: 85%;
   text-align: left;
   margin-inline: auto;
   color: var(--DarkGrayishCyan);
@@ -45,6 +51,11 @@
 
 /* Radio Inputs */
 .Form fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-block-end: 2rem;
   border: none;
 }
 
