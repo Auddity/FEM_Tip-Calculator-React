@@ -12,7 +12,6 @@ function Form({ billTotal, people, tipAmount, dispatch}) {
         <Label for='bill' text='Bill'/>
         <Inputs 
           name='bill'
-          billTotal={billTotal}
           dispatch={dispatch}
           value={billTotal}
           action={ACTIONS.BILL}
@@ -57,14 +56,22 @@ function Form({ billTotal, people, tipAmount, dispatch}) {
           action={ACTIONS.SELECTED}   
           />
         <Label for='.50' text='50%' />
+        <div className="customInputControl">
+          <Label for='custom' text='Custom' />
+          <Inputs 
+            name='custom'
+            value={tipAmount}
+            dispatch={dispatch}
+            action={ACTIONS.SELECTED}
+          />
+        </div>
       </fieldset>
       <div className="formControl">
         <Label for='people' text='Number of People'/>
         <Inputs 
           name='people'
-          people={people}
-          dispatch={dispatch}
           value={people}
+          dispatch={dispatch}
           action={ACTIONS.PEOPLE}
         />
       </div>
