@@ -5,7 +5,7 @@ import Label from './Label'
 import '../css/Form.css'
 import { ACTIONS } from '../App'
 
-function Form({ billTotal, people, tipAmount, dispatch}) {
+function Form({ bill, people, tipAmount, dispatch}) {
   return (
     <form className="Form">
       <div className="formControl">
@@ -13,7 +13,7 @@ function Form({ billTotal, people, tipAmount, dispatch}) {
         <Inputs 
           name='bill'
           dispatch={dispatch}
-          value={billTotal}
+          value={bill}
           action={ACTIONS.BILL}
         />
       </div>

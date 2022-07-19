@@ -1,9 +1,14 @@
 import React from 'react'
 
-function Display() {
+function Display({ total, tipPerPerson }) {
   return (
     <div className='Display'>
-      Display
+      <p>
+        {tipPerPerson}
+      </p>
+      <p>
+        {total}
+      </p>
     </div>
   )
 }
