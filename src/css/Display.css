@@ -1,0 +1,38 @@
+.Display {
+  width: 82%;
+  background-color: var(--VeryDarkCyan);
+  color: var(--White);
+  text-align: left;
+  padding-block: 3rem;
+  padding-inline: 2.2rem;
+  margin-inline: auto;
+  border-radius: 1.5rem;
+}
+
+.Display .valueCtnr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 3rem;
+}
+
+.Display .valueCtnr span {
+  font-size: 1.3rem;
+  color: var(--GrayishCyan);
+}
+
+.Display .valueCtnr .value {
+  font-size: 2.8rem;
+  color: var(--StrongCyan)
+}
+
+.Display .resetBtn {
+  width: 100%;
+  font-family: inherit;
+  font-size: 2.3rem;
+  background-color: var(--StrongCyan);
+  color: var(--VeryDarkCyan);
+  padding-block: 1rem;
+  border: none;
+  border-radius: .5rem;
+}
