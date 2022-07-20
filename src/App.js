@@ -8,6 +8,7 @@ export const ACTIONS = {
   BILL: 'bill',
   PEOPLE: 'people',
   SELECTED: 'selected',
+  RESET: 'reset'
 }
 
 function reducer(state, { type, payload }) {
@@ -30,6 +31,8 @@ function reducer(state, { type, payload }) {
         return evaluate(state, state.bill, state.people, state.tipAmount)
       }
       return state;
+    case ACTIONS.RESET:
+      return { bill: '', people: '', tipAmount: '', total: '', tipPerPerson: ''}
     default:
   }
 }
@@ -62,6 +65,7 @@ function App() {
           total={total}
           tipPerPerson={tipPerPerson}
           formatter={NUMBER_FORMATTER}
+          dispatch={dispatch}
         />
       </main>
     </div>

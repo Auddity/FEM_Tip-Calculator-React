@@ -1,7 +1,8 @@
 import React from 'react'
 import '../css/Display.css';
+import { ACTIONS } from '../App';
 
-function Display({ total, tipPerPerson, formatter }) {
+function Display({ total, tipPerPerson, formatter, dispatch }) {
   return (
     <div className='Display'>
       <div className="valueCtnr">
@@ -10,7 +11,6 @@ function Display({ total, tipPerPerson, formatter }) {
           <span>/ person</span></p>
         <p className='value'>
           {tipPerPerson !=='' && formatter.format(tipPerPerson)}
-          $4.27
         </p>
       </div>
       <div className="valueCtnr">
@@ -19,10 +19,9 @@ function Display({ total, tipPerPerson, formatter }) {
           <span>/ person</span></p>
         <p className='value'>
           {total !=='' && formatter.format(total)}
-          $32.79
         </p>
       </div>
-      <button className="resetBtn">RESET</button>
+      <button className="resetBtn" onClick={() => dispatch( { type: ACTIONS.RESET })}>RESET</button>
     </div>
   )
 }
