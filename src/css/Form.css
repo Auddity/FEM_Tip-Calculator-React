@@ -81,6 +81,11 @@
   color: var(--VeryDarkCyan);
 }
 
+.Form fieldset label:hover {
+  background-color: var(--LightGrayishCyan);
+  color: var(--VeryDarkCyan)
+}
+
 /* Custom Input */
 .Form fieldset .customInputControl {
   position: relative;
