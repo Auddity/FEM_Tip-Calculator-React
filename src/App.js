@@ -13,11 +13,19 @@ export const ACTIONS = {
 function reducer(state, { type, payload }) {
   switch(type) {
     case ACTIONS.BILL:
-      return { ...state, bill: payload};
+      if(ACTIONS.BILL !== '' && ACTIONS.PEOPLE !== '' ) {
+        state = { ...state, bill: payload}
+        return evaluate(state, state.bill, state.people, state.tipAmount);
+      }
+      return state;
     case ACTIONS.PEOPLE: 
-      return { ...state, people: payload };
+      if(ACTIONS.BILL !== '' && ACTIONS.PEOPLE !== '' ) {
+        state = { ...state, people: payload}
+        return evaluate(state, state.bill, state.people, state.tipAmount);
+      }
+      return state;
     case ACTIONS.SELECTED: 
-      if(ACTIONS.BILL !== '' && ACTIONS.BILL !== '') {
+      if(ACTIONS.BILL !== '' && ACTIONS.PEOPLE !== '') {
         state = { ...state, tipAmount: payload}
         return evaluate(state, state.bill, state.people, state.tipAmount)
       }
@@ -27,8 +35,8 @@ function reducer(state, { type, payload }) {
 }
 
 const evaluate = (state, bill, numPeople, tip) => {
-  const tipPerPerson = (bill * tip) / numPeople;
-  const totalPerPerson = (bill * (1 + tip)) / numPeople;
+  const tipPerPerson = (+bill * +tip) / +numPeople;
+  const totalPerPerson = (+bill * (1 + +tip)) / +numPeople;
   return { ...state, tipPerPerson: tipPerPerson, total: totalPerPerson};
 }
 
@@ -36,7 +44,6 @@ function App() {
   const [{ 
     bill, people, tipAmount, total, tipPerPerson
   }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: '', total: '', tipPerPerson: '' })
-  console.log(people, bill, tipAmount, tipPerPerson)
   return (
     <div className="App">
       <header>
