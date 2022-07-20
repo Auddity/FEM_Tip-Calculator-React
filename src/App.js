@@ -34,6 +34,8 @@ function reducer(state, { type, payload }) {
   }
 }
 
+const NUMBER_FORMATTER = new Intl.NumberFormat('en-us', { style: 'currency', currency: 'USD'})
+
 const evaluate = (state, bill, numPeople, tip) => {
   const tipPerPerson = (+bill * +tip) / +numPeople;
   const totalPerPerson = (+bill * (1 + +tip)) / +numPeople;
@@ -59,6 +61,7 @@ function App() {
         <Display 
           total={total}
           tipPerPerson={tipPerPerson}
+          formatter={NUMBER_FORMATTER}
         />
       </main>
     </div>

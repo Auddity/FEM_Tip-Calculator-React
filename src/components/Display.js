@@ -1,13 +1,14 @@
 import React from 'react'
 
-function Display({ total, tipPerPerson }) {
+function Display({ total, tipPerPerson, formatter }) {
   return (
     <div className='Display'>
       <p>
-        {tipPerPerson}
+        {tipPerPerson !=='' && formatter.format(tipPerPerson)}
       </p>
+      
       <p>
-        {total}
+        {total !=='' && formatter.format(total)}
       </p>
     </div>
   )
