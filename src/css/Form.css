@@ -12,9 +12,16 @@
 
 /* Number Inputs */
 .Form .formControl {
+  position: relative;
   text-align: left;
   margin-inline: auto;
   color: var(--DarkGrayishCyan);
+}
+
+.Form .formControl img {
+  position: absolute;
+  left: 2rem;
+  bottom: 3rem;
 }
 
 .Form .formControl label,
@@ -35,7 +42,7 @@
   border-radius: .5rem;
   margin-block: .5rem 2rem;
   -webkit-appearance: textfield;
-  -moz-appearance: textfield;
+  -moz-appearance: textfield; 
   -appearance: textfield;
 }
 

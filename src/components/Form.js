@@ -3,6 +3,8 @@ import PercentInput from './PercentInput'
 import Inputs from './Inputs'
 import Label from './Label'
 import '../css/Form.css'
+import dollarIcon from '../images/icon-dollar.svg'
+import userIcon from '../images/icon-person.svg'
 import { ACTIONS } from '../App'
 
 function Form({ bill, people, tipAmount, dispatch}) {
@@ -10,10 +12,12 @@ function Form({ bill, people, tipAmount, dispatch}) {
     <form className="Form">
       <div className="formControl">
         <Label for='bill' text='Bill'/>
+        <img src={dollarIcon} alt="dollar sign" />
         <Inputs 
           name='bill'
-          dispatch={dispatch}
           value={bill}
+          placeholder='0'
+          dispatch={dispatch}
           action={ACTIONS.BILL}
         />
       </div>
@@ -68,9 +72,11 @@ function Form({ bill, people, tipAmount, dispatch}) {
       </fieldset>
       <div className="formControl">
         <Label for='people' text='Number of People'/>
+        <img src={userIcon} alt="user icon" />
         <Inputs 
           name='people'
           value={people}
+          placeholder='0'
           dispatch={dispatch}
           action={ACTIONS.PEOPLE}
         />
