@@ -7,7 +7,7 @@ import dollarIcon from '../images/icon-dollar.svg'
 import userIcon from '../images/icon-person.svg'
 import { ACTIONS } from '../App'
 
-function Form({ bill, people, tipAmount, dispatch}) {
+function Form({ bill, people, tipAmount, dispatch, custom}) {
   return (
     <form className="Form">
       <div className="formControl">
@@ -62,7 +62,13 @@ function Form({ bill, people, tipAmount, dispatch}) {
         <Label for='.50' text='50%' />
 
         <div className="customInputControl">
-          <Label for='custom' text='Custom' />
+          {!custom && 
+            <Label 
+              for='custom' 
+              text='Custom' 
+              onClick={() => dispatch({ type: ACTIONS.CUSTOM })}  
+            />
+          }
           <Inputs 
             name='custom'
             value={tipAmount}
@@ -70,7 +76,7 @@ function Form({ bill, people, tipAmount, dispatch}) {
             action={ACTIONS.SELECTED}
           />
         </div>
-        
+
       </fieldset>
       <div className="formControl">
         <Label for='people' text='Number of People'/>

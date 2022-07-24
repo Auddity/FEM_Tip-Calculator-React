@@ -8,6 +8,7 @@ export const ACTIONS = {
   BILL: 'bill',
   PEOPLE: 'people',
   SELECTED: 'selected',
+  CUSTOM: `custom`,
   RESET: 'reset'
 }
 
@@ -31,8 +32,10 @@ function reducer(state, { type, payload }) {
         return evaluate(state, state.bill, state.people, state.tipAmount)
       }
       return state;
+    case ACTIONS.CUSTOM:
+      return { ...state, custom: true }
     case ACTIONS.RESET:
-      return { bill: '', people: '', tipAmount: '', total: '', tipPerPerson: ''}
+      return { bill: '', people: '', tipAmount: '', total: '0.00', tipPerPerson: '0.00', custom: false }
     default:
   }
 }
