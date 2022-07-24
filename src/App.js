@@ -48,7 +48,7 @@ const evaluate = (state, bill, numPeople, tip) => {
 function App() {
   const [{ 
     bill, people, tipAmount, total, tipPerPerson
-  }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: '', total: '', tipPerPerson: '' })
+  }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: '', total: '0.00', tipPerPerson: '0.00', custom: false })
   return (
     <div className="App">
       <header>

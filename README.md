@@ -8,7 +8,7 @@ TODO:
     - input`custom`.value
 
 - Currently NaN or infinity shows up in display when there's only partial state.
-  - Make it so only $0.00 appears unless all input states have a value.
+  ~~- Make it so only $0.00 appears unless all input states have a value.~~
   - Make sure it keeps updating when those states change.
 
 - Active States - Error message
@@ -16,9 +16,7 @@ TODO:
 
 - Gray out Reset button when there is no values in the input states.
 
-- Add Remixicon icons to inputs
-  - Dollar sign for Bill input
-  - User icon for Number of People input
+~~- Add icons to inputs ~~
 
 - Desktop display
   - Main a centered Element Box

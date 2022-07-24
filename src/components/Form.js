@@ -60,6 +60,7 @@ function Form({ bill, people, tipAmount, dispatch}) {
           action={ACTIONS.SELECTED}   
           />
         <Label for='.50' text='50%' />
+
         <div className="customInputControl">
           <Label for='custom' text='Custom' />
           <Inputs 
@@ -69,6 +70,7 @@ function Form({ bill, people, tipAmount, dispatch}) {
             action={ACTIONS.SELECTED}
           />
         </div>
+        
       </fieldset>
       <div className="formControl">
         <Label for='people' text='Number of People'/>
