@@ -15,19 +15,19 @@ export const ACTIONS = {
 function reducer(state, { type, payload }) {
   switch(type) {
     case ACTIONS.BILL:
-      if(ACTIONS.BILL !== '' && ACTIONS.PEOPLE !== '' ) {
+      if(ACTIONS.BILL !== null && ACTIONS.PEOPLE !== null ) {
         state = { ...state, bill: payload}
         return evaluate(state, state.bill, state.people, state.tipAmount);
       }
       return state;
     case ACTIONS.PEOPLE: 
-      if(ACTIONS.BILL !== '' && ACTIONS.PEOPLE !== '' ) {
+      if(ACTIONS.BILL !== null && ACTIONS.PEOPLE !== null ) {
         state = { ...state, people: payload}
         return evaluate(state, state.bill, state.people, state.tipAmount);
       }
       return state;
     case ACTIONS.SELECTED: 
-      if(ACTIONS.BILL !== '' && ACTIONS.PEOPLE !== '') {
+      if(ACTIONS.BILL !== null && ACTIONS.PEOPLE !== null) {
         state = { ...state, tipAmount: payload}
         return evaluate(state, state.bill, state.people, state.tipAmount)
       }
@@ -35,7 +35,7 @@ function reducer(state, { type, payload }) {
     case ACTIONS.CUSTOM:
       return { ...state, custom: true }
     case ACTIONS.RESET:
-      return { bill: '', people: '', tipAmount: '', total: '0.00', tipPerPerson: '0.00', custom: false }
+      return { total: 0, tipPerPerson: 0, custom: false }
     default:
   }
 }
@@ -43,15 +43,16 @@ function reducer(state, { type, payload }) {
 const NUMBER_FORMATTER = new Intl.NumberFormat('en-us', { style: 'currency', currency: 'USD'})
 
 const evaluate = (state, bill, numPeople, tip) => {
-  const tipPerPerson = (+bill * +tip) / +numPeople;
-  const totalPerPerson = (+bill * (1 + +tip)) / +numPeople;
+  const tipPerPerson = (+bill * (+tip * .01)) / +numPeople;
+  const totalPerPerson = (+bill * (1 + (+tip * .01))) / +numPeople;
   return { ...state, tipPerPerson: tipPerPerson, total: totalPerPerson};
 }
 
 function App() {
   const [{ 
-    bill, people, tipAmount, total, tipPerPerson
-  }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: '', total: '0.00', tipPerPerson: '0.00', custom: false })
+    bill, tipAmount, people, tipPerPerson, total, custom
+  }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false })
+  // console.log(bill, tipAmount, people, tipPerPerson, total)
   return (
     <div className="App">
       <header>
@@ -60,8 +61,9 @@ function App() {
       <main>
         <Form 
           bill={bill}
-          people={people} 
           tipAmount={tipAmount}
+          people={people} 
+          custom={custom}
           dispatch={dispatch}
         />
         <Display 

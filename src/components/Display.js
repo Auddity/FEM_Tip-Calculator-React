@@ -3,6 +3,7 @@ import '../css/Display.css';
 import { ACTIONS } from '../App';
 
 function Display({ total, tipPerPerson, formatter, dispatch }) {
+  console.log(tipPerPerson, total);
   return (
     <div className='Display'>
       <div className="valueCtnr">
@@ -10,7 +11,7 @@ function Display({ total, tipPerPerson, formatter, dispatch }) {
           <br/>
           <span>/ person</span></p>
         <p className='value'>
-          {tipPerPerson !=='' && formatter.format(tipPerPerson)}
+          {total !== Infinity && formatter.format(tipPerPerson)}
         </p>
       </div>
       <div className="valueCtnr">
@@ -18,7 +19,7 @@ function Display({ total, tipPerPerson, formatter, dispatch }) {
           <br/>
           <span>/ person</span></p>
         <p className='value'>
-          {total !=='' && formatter.format(total)}
+          {total !== Infinity && formatter.format(total)}
         </p>
       </div>
       <button className="resetBtn" onClick={() => dispatch( { type: ACTIONS.RESET })}>RESET</button>

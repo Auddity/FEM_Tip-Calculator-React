@@ -114,6 +114,7 @@
   inset: 0;
   font-family: inherit;
   font-size: inherit;
+  text-align: center;
   color: var(--VeryDarkCyan);
   border: none;
   -webkit-appearance: textfield;
@@ -127,7 +128,5 @@
 }
 
 .Form fieldset .customInputControl input[type="number"]:focus {
-  text-align: center;
   outline: none;
-  z-index: 2;
 }

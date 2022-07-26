@@ -5,14 +5,12 @@ function Inputs(props) {
     <input
       type='number'
       min='1'
-      onChange={(e) => 
-        props.dispatch({ type: props.action, payload: e.target.value })
-      }
+      onChange={(e) => props.dispatch({ type: props.action, payload: e.target.value })}
       name={props.name}
       id={props.name}
       value={props.value}
       placeholder={props.placeholder}
-      />
+    />
   )
 }
 

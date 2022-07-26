@@ -7,7 +7,8 @@ import dollarIcon from '../images/icon-dollar.svg'
 import userIcon from '../images/icon-person.svg'
 import { ACTIONS } from '../App'
 
-function Form({ bill, people, tipAmount, dispatch, custom}) {
+function Form({ bill, people, tipAmount, dispatch, custom }) {
+  console.log(custom)
   return (
     <form className="Form">
       <div className="formControl">
@@ -25,50 +26,49 @@ function Form({ bill, people, tipAmount, dispatch, custom}) {
       <p>Select Tip %</p>
       <fieldset>
         <PercentInput 
-          value='.5'
+          value='5'
           tipAmount={tipAmount}
           dispatch={dispatch} 
           action={ACTIONS.SELECTED} 
           />
-        <Label for='.5' text='5%'/>
+        <Label for='5' text='5%'/>
         <PercentInput 
-          value='.10'
+          value='10'
           tipAmount={tipAmount}
           dispatch={dispatch}
           action={ACTIONS.SELECTED}   
           />
-        <Label for='.10' text='10%' />
+        <Label for='10' text='10%' />
         <PercentInput 
-          value='.15'
+          value='15'
           tipAmount={tipAmount}
           dispatch={dispatch}
           action={ACTIONS.SELECTED}   
           />
-        <Label for='.15' text='15%' />
+        <Label for='15' text='15%' />
         <PercentInput 
           percent='25%'
-          value='.25'
+          value='25'
           tipAmount={tipAmount}
           dispatch={dispatch} 
           action={ACTIONS.SELECTED}  
           />
-        <Label for='.25' text='25%' />
+        <Label for='25' text='25%' />
         <PercentInput 
-          value='.50'
+          value='50'
           tipAmount={tipAmount}
           dispatch={dispatch}
           action={ACTIONS.SELECTED}   
           />
-        <Label for='.50' text='50%' />
+        <Label for='50' text='50%' />
 
-        <div className="customInputControl">
+        <div 
+          className="customInputControl"
+          onClick={() => dispatch({ type: ACTIONS.CUSTOM })}
+        >
           {!custom && 
-            <Label 
-              for='custom' 
-              text='Custom' 
-              onClick={() => dispatch({ type: ACTIONS.CUSTOM })}  
-            />
-          }
+          <Label for='custom'  text='Custom' />
+        }
           <Inputs 
             name='custom'
             value={tipAmount}
