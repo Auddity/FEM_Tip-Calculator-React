@@ -52,7 +52,7 @@ function App() {
   const [{ 
     bill, tipAmount, people, tipPerPerson, total, custom
   }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false })
-  // console.log(bill, tipAmount, people, tipPerPerson, total)
+  
   return (
     <div className="App">
       <header>

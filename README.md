@@ -2,14 +2,13 @@
 
 TODO:
 
-- Active States - Error message
-  - Create an error message (text align right) above the Bill & Number of People inputs.
-
 - Gray out Reset button when there is no values in the input states.
 
 - Desktop display
   - Main a centered Element Box
   - Flex inputs and display to horizontal
+  
+~~- Active States - Error message~~
 
 ~~- Conditional on `custom` input.~~
   ~~- When input value is present keep Label hidden~~

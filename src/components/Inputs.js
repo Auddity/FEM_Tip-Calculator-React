@@ -3,6 +3,7 @@ import React from 'react'
 function Inputs(props) {
   return (
     <input
+      className={props.value === '0' ? 'error' : null}
       type='number'
       min='1'
       onChange={(e) => props.dispatch({ type: props.action, payload: e.target.value })}

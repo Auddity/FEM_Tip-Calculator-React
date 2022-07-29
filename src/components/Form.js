@@ -2,17 +2,20 @@ import React from 'react'
 import PercentInput from './PercentInput'
 import Inputs from './Inputs'
 import Label from './Label'
+import ErrMsg from './ErrMsg'
 import '../css/Form.css'
 import dollarIcon from '../images/icon-dollar.svg'
 import userIcon from '../images/icon-person.svg'
 import { ACTIONS } from '../App'
 
 function Form({ bill, people, tipAmount, dispatch, custom }) {
-  console.log(custom)
   return (
     <form className="Form">
       <div className="formControl">
-        <Label for='bill' text='Bill'/>
+        <div className="labelContainer">
+          <Label for='bill' text='Bill'/>
+          {bill === '0' && <ErrMsg />}
+        </div>
         <img src={dollarIcon} alt="dollar sign" />
         <Inputs 
           name='bill'
@@ -23,7 +26,7 @@ function Form({ bill, people, tipAmount, dispatch, custom }) {
         />
       </div>
 
-      <p>Select Tip %</p>
+      <p className='label'>Select Tip %</p>
       <fieldset>
         <PercentInput 
           value='5'
@@ -79,7 +82,10 @@ function Form({ bill, people, tipAmount, dispatch, custom }) {
 
       </fieldset>
       <div className="formControl">
-        <Label for='people' text='Number of People'/>
+        <div className="labelContainer">
+          <Label for='people' text='Number of People'/>
+          {people === '0' && <ErrMsg />}
+        </div>
         <img src={userIcon} alt="user icon" />
         <Inputs 
           name='people'

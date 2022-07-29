@@ -3,7 +3,6 @@ import '../css/Display.css';
 import { ACTIONS } from '../App';
 
 function Display({ total, tipPerPerson, formatter, dispatch }) {
-  console.log(tipPerPerson, total);
   return (
     <div className='Display'>
       <div className="valueCtnr">

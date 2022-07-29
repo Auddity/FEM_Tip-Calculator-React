@@ -18,6 +18,12 @@
   color: var(--DarkGrayishCyan);
 }
 
+.Form .formControl .labelContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .Form .formControl img {
   position: absolute;
   left: 2rem;
@@ -129,4 +135,15 @@
 
 .Form fieldset .customInputControl input[type="number"]:focus {
   outline: none;
+}
+
+/* Error */
+.Form .formControl .labelContainer .error {
+  text-align: right;
+  width: 200px;
+  color: var(--OrangeError);
+}
+
+.Form .formControl input[type="number"].error {
+  border: 1px solid var(--OrangeError);
 }
