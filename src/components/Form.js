@@ -80,6 +80,7 @@ function Form({ bill, people, tipAmount, dispatch, custom }) {
               dispatch={dispatch}
               action={ACTIONS.SELECTED}
             />
+            <p className="customPercentSymbol">%</p>
           </div>
 
         </fieldset>

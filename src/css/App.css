@@ -14,11 +14,11 @@ main {
   padding-block-end: 4rem;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   header {
     margin-block: 8rem;
   }
-  
+
   main {
     display: flex;
     align-items: center;
