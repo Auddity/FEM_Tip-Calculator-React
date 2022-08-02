@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Display.css';
 import { ACTIONS } from '../App';
 
-function Display({ total, tipPerPerson, formatter, dispatch }) {
+function Display({ bill, people, total, tipPerPerson, formatter, dispatch }) {
   return (
     <div className='Display'>
       <div className="valueCtnr">
@@ -21,7 +21,14 @@ function Display({ total, tipPerPerson, formatter, dispatch }) {
           {total !== Infinity && formatter.format(total)}
         </p>
       </div>
-      <button className="resetBtn" onClick={() => dispatch( { type: ACTIONS.RESET })}>RESET</button>
+      <button 
+        className={(bill === '' || people === '') ? 'resetBtn default' : 'resetBtn active' }
+        onClick={() => dispatch( { type: ACTIONS.RESET })}
+        
+        >
+          RESET
+        </button>
+      
     </div>
   )
 }

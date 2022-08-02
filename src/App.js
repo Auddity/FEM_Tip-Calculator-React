@@ -35,7 +35,7 @@ function reducer(state, { type, payload }) {
     case ACTIONS.CUSTOM:
       return { ...state, custom: true }
     case ACTIONS.RESET:
-      return { total: 0, tipPerPerson: 0, custom: false }
+      return { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false }
     default:
   }
 }
@@ -67,6 +67,8 @@ function App() {
           dispatch={dispatch}
         />
         <Display 
+          bill={bill}
+          people={people}
           total={total}
           tipPerPerson={tipPerPerson}
           formatter={NUMBER_FORMATTER}
