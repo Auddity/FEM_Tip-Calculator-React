@@ -7,8 +7,28 @@ header {
 }
 
 main {
+  max-width: 100rem;
   background-color: var(--White);
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   padding-block-end: 4rem;
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    margin-block: 8rem;
+  }
+  
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 80%;
+    height: 50rem;
+    padding: 4rem;
+    margin-inline: auto;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
 }

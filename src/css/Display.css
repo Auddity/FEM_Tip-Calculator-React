@@ -26,7 +26,13 @@
   color: var(--StrongCyan)
 }
 
-.Display .resetBtn {
+.Display .resetBtnCtnr {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.Display .resetBtnCtnr .resetBtn {
   width: 100%;
   font-family: inherit;
   font-size: 2.3rem;
@@ -35,19 +41,43 @@
   border-radius: .5rem;
 }
 
-.Display .resetBtn.default {
+.Display .resetBtnCtnr .resetBtn.default {
   background-color: var(--InactiveResetBg);
   color: var(--InactiveResetText);
   cursor: default;
 }
 
-.Display .resetBtn.active {
+.Display .resetBtnCtnr .resetBtn.active {
   background-color: var(--StrongCyan);
   color: var(--VeryDarkCyan);
   cursor: pointer;
 }
 
-.Display .resetBtn.active:hover {
+.Display .resetBtnCtnr .resetBtn.active:hover {
   background-color: var(--LightGrayishCyan);
 }
 
+@media screen and (min-width: 1200px) {
+  .Display {
+    display: flex;
+    flex-direction: column;
+    height: 417px;
+    padding: 4rem;
+  }
+
+  .Display .valueCtnr {
+    margin-block-end: 4.5rem;
+  }
+
+  .Display .valueCtnr p {
+    font-size: 1.8rem;
+  }
+
+  .Display .valueCtnr .value {
+    font-size: 4rem;
+  }
+
+  .Display .resetBtnCtnr {
+    flex: 1;
+  }
+}

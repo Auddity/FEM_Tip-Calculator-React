@@ -26,61 +26,66 @@ function Form({ bill, people, tipAmount, dispatch, custom }) {
         />
       </div>
 
-      <p className='label'>Select Tip %</p>
-      <fieldset>
-        <PercentInput 
-          value='5'
-          tipAmount={tipAmount}
-          dispatch={dispatch} 
-          action={ACTIONS.SELECTED} 
-          />
-        <Label for='5' text='5%'/>
-        <PercentInput 
-          value='10'
-          tipAmount={tipAmount}
-          dispatch={dispatch}
-          action={ACTIONS.SELECTED}   
-          />
-        <Label for='10' text='10%' />
-        <PercentInput 
-          value='15'
-          tipAmount={tipAmount}
-          dispatch={dispatch}
-          action={ACTIONS.SELECTED}   
-          />
-        <Label for='15' text='15%' />
-        <PercentInput 
-          percent='25%'
-          value='25'
-          tipAmount={tipAmount}
-          dispatch={dispatch} 
-          action={ACTIONS.SELECTED}  
-          />
-        <Label for='25' text='25%' />
-        <PercentInput 
-          value='50'
-          tipAmount={tipAmount}
-          dispatch={dispatch}
-          action={ACTIONS.SELECTED}   
-          />
-        <Label for='50' text='50%' />
-
-        <div 
-          className="customInputControl"
-          onClick={() => dispatch({ type: ACTIONS.CUSTOM })}
-        >
-          {!custom && 
-          <Label for='custom'  text='Custom' />
-        }
-          <Inputs 
-            name='custom'
-            value={tipAmount}
+      <div className="tipCtnr">
+      
+        <p className='label'>Select Tip %</p>
+        <fieldset>
+          <PercentInput 
+            value='5'
+            tipAmount={tipAmount}
+            dispatch={dispatch} 
+            action={ACTIONS.SELECTED} 
+            />
+          <Label for='5' text='5%'/>
+          <PercentInput 
+            value='10'
+            tipAmount={tipAmount}
             dispatch={dispatch}
-            action={ACTIONS.SELECTED}
-          />
-        </div>
+            action={ACTIONS.SELECTED}   
+            />
+          <Label for='10' text='10%' />
+          <PercentInput 
+            value='15'
+            tipAmount={tipAmount}
+            dispatch={dispatch}
+            action={ACTIONS.SELECTED}   
+            />
+          <Label for='15' text='15%' />
+          <PercentInput 
+            percent='25%'
+            value='25'
+            tipAmount={tipAmount}
+            dispatch={dispatch} 
+            action={ACTIONS.SELECTED}  
+            />
+          <Label for='25' text='25%' />
+          <PercentInput 
+            value='50'
+            tipAmount={tipAmount}
+            dispatch={dispatch}
+            action={ACTIONS.SELECTED}   
+            />
+          <Label for='50' text='50%' />
 
-      </fieldset>
+          <div 
+            className="customInputControl"
+            onClick={() => dispatch({ type: ACTIONS.CUSTOM })}
+          >
+            {!custom && 
+            <Label for='custom'  text='Custom' />
+          }
+            <Inputs 
+              name='custom'
+              value={tipAmount}
+              dispatch={dispatch}
+              action={ACTIONS.SELECTED}
+            />
+          </div>
+
+        </fieldset>
+
+      </div>
+
       <div className="formControl">
         <div className="labelContainer">
           <Label for='people' text='Number of People'/>

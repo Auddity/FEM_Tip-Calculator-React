@@ -21,13 +21,14 @@ function Display({ bill, people, total, tipPerPerson, formatter, dispatch }) {
           {total !== Infinity && formatter.format(total)}
         </p>
       </div>
-      <button 
-        className={(bill === '' || people === '') ? 'resetBtn default' : 'resetBtn active' }
-        onClick={() => dispatch( { type: ACTIONS.RESET })}
-        
-        >
+      <div className="resetBtnCtnr">
+        <button
+          className={(bill === '' || people === '') ? 'resetBtn default' : 'resetBtn active' }
+          onClick={() => dispatch( { type: ACTIONS.RESET })}
+          >
           RESET
         </button>
+      </div>
       
     </div>
   )
