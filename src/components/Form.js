@@ -96,8 +96,8 @@ function Form({ bill, people, tipAmount, dispatch, custom }) {
         <Inputs 
           name='people'
           value={people}
-          placeholder='0'
           dispatch={dispatch}
+          placeholder='0'
           action={ACTIONS.PEOPLE}
         />
       </div>
