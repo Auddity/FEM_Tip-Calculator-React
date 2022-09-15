@@ -8,7 +8,8 @@ export const ACTIONS = {
   BILL: 'bill',
   PEOPLE: 'people',
   SELECTED: 'selected',
-  CUSTOM: `custom`,
+  CUSTOM: 'custom',
+  CUSTOM_VALUE: 'custom-value',
   RESET: 'reset'
 }
 
@@ -33,9 +34,15 @@ function reducer(state, { type, payload }) {
       }
       return state;
     case ACTIONS.CUSTOM:
-      return { ...state, custom: true }
+      return { ...state, custom: true };
+    case ACTIONS.CUSTOM_VALUE:
+      if(ACTIONS.BILL !== null && ACTIONS.PEOPLE !== null) {
+        state = { ...state, customValue: payload, tipAmount: payload}
+        return evaluate(state, state.bill, state.people, state.tipAmount)
+      }
+      return state;
     case ACTIONS.RESET:
-      return { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false }
+      return { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false, customValue: '' }
     default:
   }
 }
@@ -50,8 +57,9 @@ const evaluate = (state, bill, numPeople, tip) => {
 
 function App() {
   const [{ 
-    bill, tipAmount, people, tipPerPerson, total, custom
-  }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false })
+    bill, tipAmount, people, tipPerPerson, total, custom, customValue
+  }, dispatch] = useReducer(reducer, { bill: '', people: '', tipAmount: 0, tipPerPerson: 0, total: 0, custom: false, customValue: '' })
+  console.log(customValue)
   
   return (
     <div className="App">
@@ -64,6 +72,7 @@ function App() {
           tipAmount={tipAmount}
           people={people} 
           custom={custom}
+          customValue={customValue}
           dispatch={dispatch}
         />
         <Display 

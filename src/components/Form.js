@@ -8,7 +8,7 @@ import dollarIcon from '../images/icon-dollar.svg'
 import userIcon from '../images/icon-person.svg'
 import { ACTIONS } from '../App'
 
-function Form({ bill, people, tipAmount, dispatch, custom }) {
+function Form({ bill, people, tipAmount, dispatch, custom, customValue }) {
   return (
     <form className="Form">
       <div className="formControl">
@@ -76,9 +76,10 @@ function Form({ bill, people, tipAmount, dispatch, custom }) {
           }
             <Inputs 
               name='custom'
-              value={tipAmount}
+              value={customValue}
               dispatch={dispatch}
-              action={ACTIONS.SELECTED}
+              placeholder='0'
+              action={ACTIONS.CUSTOM_VALUE}
             />
             <p className="customPercentSymbol">%</p>
           </div>
